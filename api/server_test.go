@@ -189,15 +189,15 @@ func TestApi(t *testing.T) {
 			})
 		})
 
-		// t.Run("healthHandler - /api/", func(t *testing.T) {
-		// 	res, err := performRequest(r, "GET", "/api")
+		t.Run("healthHandler - /api/", func(t *testing.T) {
+			res, err := performRequest(r, "GET", "/api")
 
-		// 	body, _ := ioutil.ReadAll(res.Body)
+			body, _ := ioutil.ReadAll(res.Body)
 
-		// 	assert.Equal(err, nil, "should be equal")
-		// 	assert.Equal(res.Result().StatusCode, 200, "should be equal")
-		// 	assert.Equal(string(body), "{\"success\":true,\"version\":\""+config.Version+"\"}", "should be equal")
-		// })
+			assert.Equal(err, nil, "should be equal")
+			assert.Equal(res.Result().StatusCode, 200, "should be equal")
+			assert.Equal(string(body), "{\"success\":true,\"version\":\""+config.Version+"\"}", "should be equal")
+		})
 
 		t.Run("404 error - /api/notfound", func(t *testing.T) {
 			res, err := performRequest(r, "GET", "/api/notfound")

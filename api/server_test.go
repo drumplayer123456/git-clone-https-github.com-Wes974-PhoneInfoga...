@@ -9,6 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/sundowndev/phoneinfoga/pkg/scanners"
+	"github.com/sundowndev/phoneinfoga/pkg/config"
 	gock "gopkg.in/h2non/gock.v1"
 )
 
